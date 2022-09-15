@@ -240,8 +240,6 @@ select {
 }
 
 .row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
   margin-top: 0;
@@ -587,8 +585,16 @@ select {
 /* Body about */
 .container2{
   display: flex;
+  justify-content: space-around;
+  -webkit-text-size-adjust: 100%;
 }
 .container2 .ct-objectives{
-  width: 50%;
-  padding: 0 3rem;
+    width: 50%;
+}
+
+.container2 .ct-objectives .body-ct-objective{
+  text-align: justify;
+}
+.container .ubication{
+  text-align: center;
 }
