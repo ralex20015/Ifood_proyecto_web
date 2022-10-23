@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/register.css">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-dark sticky-top">
+            <div class="container">
+                <a class="nav-link link-secondary p-0" href="../index.html">IFood<img width="15" height="15"
+                        src="../Images/pizza-icon.png"> </a>
+                <ul class="nav justify-content-end">
+                    <li><a class="nav-link link-secondary" href="../pages/about.html">Acerca de</a></li>
+                    <li><a class="nav-link link-secondary" href="#photos">Platillos</a></li>
+                    <li><a class="nav-link link-secondary" href="../pages/register.html">Registrarse</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <form action="../php/login.php" method="post" class="container2">
+            <p class="element">
+                <input type="email" name="email" placeholder="Correo">
+            </p>
+            <p class="element">
+                <input type="password" name="pass" placeholder="Contraseña">
+            </p>
+            <button>Iniciar Sesión</button>
+        </form>
+    </main>
+
+    <footer class="bg-dark py-3">
+        <p class="text-center text-muted py-3 m-0 fs-4">&copy; 2022 IFood</p>
+    </footer>
+</body>
+</html>

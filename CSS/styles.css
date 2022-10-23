@@ -607,3 +607,17 @@ select {
     width: 90%
   }
 }
+
+@media (max-width: 800px) {
+  .container2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .container2-reverse{
+    flex-flow: column-reverse;
+  }
+
+  .container2 .ubication .iframe {
+    width: 90%
+  }
+}

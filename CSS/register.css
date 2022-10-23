@@ -1,0 +1,226 @@
+*,
+*::after,
+ *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+body{
+    height: 100vh;
+    background-color: aquamarine;
+    width: 100%;
+}
+
+/* NAV */
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .navbar .container {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+  .bg-dark {
+    background-color: rgba(33,37,41,1) !important;
+  }
+  
+  .sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+  
+  .container,
+  .container-fluid {
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1320px;
+    }
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #0d6efd;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover, .nav-link:focus {
+    color: #0a58ca;
+  }
+  
+  .link-secondary {
+    color: #fff;
+  }
+  .link-secondary:hover, .link-secondary:focus {
+    color: #565e64;
+  }
+  
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .justify-content-end {
+    justify-content: flex-end !important;
+  }
+  
+  .p-0 {
+    padding: 0 !important;
+  }
+  
+  .text-white {
+    --bs-text-opacity: 1;
+     color: rgba(255,255,255,1) !important;
+  }
+  
+  .pb-5 {
+    padding-bottom: 3rem !important;
+  }
+  
+  .pt-3 {
+    padding-top: 1rem !important;
+  }
+
+.container2{
+    display: flex;
+    position: relative;
+    top: 50%;
+    transform: translateY(15%);
+    background-color: white;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    align-items: center;
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #6b6969;
+}
+
+@media (min-width: 1250px){
+    .container2{
+        width: 30%;
+    }
+}
+
+.container2 h2.title{
+    margin-bottom: 1rem;
+}
+
+.container2 p.element{
+    width: 90%;
+    padding: 10px;
+}
+.container2 p.element input{
+    border: none;
+    border-bottom: 2px solid black;
+    width: 100%;
+    margin-bottom: 1.2rem;
+    outline: none;
+    padding: 5px;
+    
+}
+
+.container2 p.element input:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(50, 50, 240);
+}
+
+.container2 button{
+    background-color: rgb(50, 50, 240);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+    width: 90%;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.container2 button:hover{
+    color: rgb(50, 50, 240);
+    background-color: white;
+    border: 1px solid rgb(50, 50, 240);
+}
+
+.container2 a.already-registered{
+    color:  rgb(50, 50, 240);
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Footer
+*/
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  .text-muted {
+    color: rgba(255, 255, 255, 1)!important;
+  }
+  
+  .m-0 {
+    margin: 0 !important;
+  }
+
+  
+.text-center {
+    text-align: center !important;
+  }
+
+  .fs-4 {
+    font-size: calc(1.275rem + 0.3vw) !important;
+  }
