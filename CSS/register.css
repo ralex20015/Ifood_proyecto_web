@@ -8,7 +8,6 @@
 }
 body{
     height: 100vh;
-    background-color: aquamarine;
     width: 100%;
 }
 
@@ -128,26 +127,69 @@ body{
     padding-top: 1rem !important;
   }
 
+.bg-image{
+  display:flex;
+  width: 100%;
+  height: 100%;
+  background: url(../Images/login_background.jpg) no-repeat center center/cover;
+  align-items: center;
+  opacity: 0.7;
+}
+
+
 .container2{
     display: flex;
-    position: relative;
-    top: 50%;
-    transform: translateY(15%);
     background-color: white;
     flex-direction: column;
-    width: 50%;
     margin: 0 auto;
-    align-items: center;
     padding: 1.2rem;
     border-radius: 10px;
     box-shadow: 3px 3px 3px #6b6969;
+    z-index: 1;
+}
+.center-register{
+  position: relative;
+  top: 50%;
+  transform: translateY(15%);
+}
+
+.login{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 58%;
+  align-items: center;
+  font-size: 14px;
+}
+img.user-image{
+  width: 50%;
+}
+
+@media(min-width: 300px){
+  .container2 , .container2.login{
+    width: 80%;
+  }
+}
+
+@media(min-width: 500px){
+  .container2 , .container2.login{
+    width: 60%;
+  }
+}
+
+@media(min-width: 600px){
+  .container2 , .container2.login{
+    width: 40%;
+  }
 }
 
 @media (min-width: 1250px){
-    .container2{
-        width: 30%;
-    }
+  .container2, .container2.login{
+      width: 30%;
+  }
 }
+
 
 .container2 h2.title{
     margin-bottom: 1rem;
@@ -163,8 +205,7 @@ body{
     width: 100%;
     margin-bottom: 1.2rem;
     outline: none;
-    padding: 5px;
-    
+    padding: 5px; 
 }
 
 .container2 p.element input:focus{
@@ -198,10 +239,11 @@ body{
 
 /* Footer
 */
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+
+footer.align-bottom{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .py-3 {
     padding-top: 1rem !important;

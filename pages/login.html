@@ -14,16 +14,20 @@
                 <a class="nav-link link-secondary p-0" href="../index.html">IFood<img width="15" height="15"
                         src="../Images/pizza-icon.png"> </a>
                 <ul class="nav justify-content-end">
-                    <li><a class="nav-link link-secondary" href="../pages/about.html">Acerca de</a></li>
-                    <li><a class="nav-link link-secondary" href="#photos">Platillos</a></li>
+                    <li><a class="nav-link link-secondary" href="../index.html">Inicio</a></li>
                     <li><a class="nav-link link-secondary" href="../pages/register.html">Registrarse</a></li>
+                    <li><a class="nav-link link-secondary" href="../pages/about.html">Acerca de</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <form action="../php/login.php" method="post" class="container2">
+    <main class="bg-image muted">
+      
+    </main>
+    <section>
+        <form action="../php/login.php" method="post" class="container2 login">
+            <img src="../Images/user.svg" alt="user image" class="user-image">
             <p class="element">
                 <input type="email" name="email" placeholder="Correo">
             </p>
@@ -31,8 +35,9 @@
                 <input type="password" name="pass" placeholder="Contraseña">
             </p>
             <button>Iniciar Sesión</button>
+            <p class="element">¿Aún no tienes cuenta?<a href="../pages/register.html" class="already-registered"> Click aquí para registrarte</a></p>
         </form>
-    </main>
+    </section>
 
     <footer class="bg-dark py-3">
         <p class="text-center text-muted py-3 m-0 fs-4">&copy; 2022 IFood</p>
