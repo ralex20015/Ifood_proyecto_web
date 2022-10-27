@@ -447,6 +447,11 @@ select {
   }
 }
 
+.recipe-cost{
+  color: #0a58ca;
+  font-size: 1.5rem;
+}
+
 
 /*
  Frase
