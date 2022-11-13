@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['id']) ||(trim ($_SESSION['id']) == '')) {
+        header('location:login.php');
+        exit();
+    }else {
+        if (isset($_SESSION['id'])){
+            if ($_SESSION['id'] == -1) {
+                header("location:formProducts.php");
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +25,13 @@
     <header>
         <nav class="navbar bg-dark sticky-top">
             <div class="container">
-                <a class="nav-link link-secondary p-0" href="../index.html">IFood<img width="15" height="15"
+                <a class="nav-link link-secondary p-0" href="../index.php">IFood<img width="15" height="15"
                         src="../Images/pizza-icon.png"> </a>
                 <ul class="nav justify-content-end">
-                    <li><a class="nav-link link-secondary" href="../index.html">Inicio</a></li>
-                    <li><a class="nav-link link-secondary" href="../pages/register.html">Registrarse</a></li>
+                    <li><a class="nav-link link-secondary" href="../index.php">Inicio</a></li>
                     <li><a class="nav-link link-secondary" href="../pages/about.html">Acerca de</a></li>
+                    <li><a class="nav-link link-secondary" href="../php/logOut.php">LogOut</a></li>
+
                 </ul>
             </div>
         </nav>

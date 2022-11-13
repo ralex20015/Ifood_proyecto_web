@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if (isset($_SESSION['id'])){
+        if ($_SESSION['id'] == -1) {
+            header("location: ./pages/formProducts.php");
+        }else{
+            header("location: ./pages/products.php");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +33,7 @@
             <ul class="nav justify-content-end">
                 <li><a href="#" class="nav-link link-secondary">Inicio</a></li>
                 <li><a class="nav-link link-secondary" href="pages/register.html">Registrarse</a></li>
-                <li><a class="nav-link link-secondary" href="pages/login.html">Login</a></li>
+                <li><a class="nav-link link-secondary" href="pages/login.php">Login</a></li>
                 <li><a class="nav-link link-secondary" href="pages/about.html">Acerca de</a></li>
             </ul>
         </div>
@@ -111,7 +122,6 @@
     <footer class="bg-dark py-3">
         <p class="text-center text-muted py-3 m-0 fs-4">&copy; 2022 IFood</p>
     </footer>
-
 </body>
 
 

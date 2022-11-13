@@ -12,7 +12,7 @@
    
           $insert = mysqli_query($conn, $query);
           echo "Registro exitoso";
-          header("location: ../pages/login.html");
+          header("location: ../pages/login.php");
      }
 
      mysqli_close($conn);
