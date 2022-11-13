@@ -12,7 +12,7 @@
         header("location: ../pages/products.html");
     }else{
         header("location: ../pages/login.html");
-        echo"Error de autentificación";
+        
     }
 
     mysqli_close($conn);

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/register.css">
+
+    <title>Registro de productos</title>
+</head>
+<body>
+    <h2>Registro de prouctos</h2>
+    <form class="container2" action="../php/imageRegister.php" method="POST">
+        <p class="element"> 
+            <label for="name">Nombre</label>
+            <input type="text" name="name">
+            
+        </p>
+        <p class="element">
+            <label for="description">Descripción</label>
+            <input type="text" name="description">
+        </p>
+        <p class="element">
+            <label for="cost">Costo</label>
+            <input type="text" name="cost">
+        </p>
+        <p class="element">
+            <label for="id_chef">Id del chef</label>
+            <input type="text" name="id_chef">
+        </p>
+        <p class="element">
+            <label for="Link de la imagen">Link de la imagen</label>
+            <input type="text" name="image">
+        </p>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>
