@@ -27,40 +27,48 @@
     <header>
         <nav class="navbar bg-dark sticky-top">
             <div class="container">
-                <a class="nav-link link-secondary p-0" href="../index.php">IFood<img width="15" height="15"
+                <a class="nav-link link-secondary p-0" href="./adminPage.html">IFood<img width="15" height="15"
                         src="../Images/pizza-icon.png"> </a>
                 <ul class="nav justify-content-end">
-                    <li><a class="nav-link link-secondary" href="#">Inicio</a></li>
-                    <li><a class="nav-link link-secondary" href="../pages/recipes.php">Añadir</a></li>
+                    <li><a class="nav-link link-secondary" href="./adminPage.html">Inicio</a></li>
+                    <li><a class="nav-link link-secondary" href="../pages/recipes.php">Ver</a></li>
+                    <li><a class="nav-link link-secondary" href="../pages/formProducts.php">Añadir</a></li>
                     <li><a class="nav-link link-secondary" href="../php/logOut.php">LogOut</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-    <h2>Registro de prouctos</h2>
-    <form class="container2" action="../php/imageRegister.php" method="POST">
-        <p class="element"> 
-            <label for="name">Nombre</label>
-            <input type="text" name="name">
-            
-        </p>
-        <p class="element">
-            <label for="description">Descripción</label>
-            <input type="text" name="description">
-        </p>
-        <p class="element">
-            <label for="cost">Costo</label>
-            <input type="text" name="cost">
-        </p>
-        <p class="element">
-            <label for="id_chef">Id del chef</label>
-            <input type="text" name="id_chef">
-        </p>
-        <p class="element">
-            <label for="Link de la imagen">Link de la imagen</label>
-            <input type="text" name="image">
-        </p>
-        <button type="submit">Registrar</button>
-    </form>
+    <h2 class="text-center py-3">Registro de productos</h2>
+    <main class="sl-cont">
+        <form class="container2" action="../php/imageRegister.php" method="POST">
+            <p class="element"> 
+                <label for="name">Nombre</label>
+                <input type="text" name="name">
+                
+            </p>
+            <p class="element">
+                <label for="description">Descripción</label>
+                <input type="text" name="description">
+            </p>
+            <p class="element">
+                <label for="cost">Costo</label>
+                <input type="text" name="cost">
+            </p>
+            <p class="element">
+                <label for="id_chef">Id del chef</label>
+                <input type="text" name="id_chef">
+            </p>
+            <p class="element">
+                <label for="Link de la imagen">Link de la imagen</label>
+                <input type="text" name="image">
+            </p>
+            <button type="submit">Registrar</button>
+        </form>
+    </main>
+
+
+    <footer class="bg-dark py-3">
+        <p class="text-center text-muted py-3 m-0 fs-4">&copy; 2022 IFood</p>
+    </footer>
 </body>
 </html>

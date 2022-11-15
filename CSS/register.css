@@ -9,8 +9,8 @@
 body{
     height: 100vh;
     width: 100%;
+    background-color: azure;
 }
-
 /* NAV */
 
 .navbar {
@@ -136,7 +136,33 @@ body{
   opacity: 0.7;
 }
 
+.sl-cont{
+  display: flex;
+  align-items: center;
+  height: 80%;
+}
+.container3{
+  background-color: white;
+  margin: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #6b6969;
+  z-index: 1;
+  cursor: pointer; 
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
+.container3 img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+a.adminBoard{
+  text-decoration: none;
+  color: black;
+}
 .container2{
     display: flex;
     background-color: white;
@@ -175,6 +201,21 @@ img.user-image{
 @media(min-width: 500px){
   .container2 , .container2.login{
     width: 60%;
+  }
+}
+@media(max-width: 500px){
+  .sl-cont{
+    flex-direction: column;
+  }
+  .container3 {
+    width: 90%;
+    flex: 1 0 auto;
+  }
+
+  footer.align-bottom{
+    transform: translateY(30%);
+    position: relative;
+    width: 100%;
   }
 }
 
@@ -257,7 +298,6 @@ footer.align-bottom{
   .m-0 {
     margin: 0 !important;
   }
-
   
 .text-center {
     text-align: center !important;
