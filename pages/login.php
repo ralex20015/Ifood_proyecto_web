@@ -40,13 +40,13 @@
         <form action="../php/authentication.php" method="post" class="container2 login">
             <img src="../Images/user.svg" alt="user image" class="user-image">
             <p class="element">
-                <input type="email" name="email" placeholder="Correo">
+                <input type="email" name="email" required placeholder="Correo">
             </p>
             <p class="element">
-                <input type="password" name="pass" placeholder="Contraseña">
+                <input type="password" name="pass" required placeholder="Contraseña">
             </p>
             <button>Iniciar Sesión</button>
-            <p class="element">¿Aún no tienes cuenta?<a href="../pages/register.html" class="already-registered"> Click aquí para registrarte</a></p>
+            <p class="element my-2">¿Aún no tienes cuenta?<a href="../pages/register.html" class="already-registered"> Click aquí para registrarte</a></p>
         </form>
     </section>
 

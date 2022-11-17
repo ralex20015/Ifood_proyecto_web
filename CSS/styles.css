@@ -147,9 +147,13 @@ select {
 }
 
 .bg-dark {
-  background-color: rgba(33,37,41,1) !important;
+  background-color: #76b5c5 !important;
 }
 
+.image-bg{
+  background: url(../Images/Pizza.jpg) center center/cover;
+  opacity: 0.7;
+}
 .sticky-top {
   position: -webkit-sticky;
   position: sticky;
@@ -166,6 +170,10 @@ select {
   margin-left: auto;
 }
 
+.container3{
+  text-align: center;
+  margin: 0;
+}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -231,6 +239,13 @@ select {
    color: rgba(255,255,255,1) !important;
 }
 
+.text-gray {
+  --bs-text-opacity: 1;
+   color:  #565e64 !important;
+   border: 2px solid #565e64;
+}
+
+
 .pb-5 {
   padding-bottom: 3rem !important;
 }
@@ -262,6 +277,7 @@ select {
 
 .align-items-center {
   align-items: center !important;
+  justify-content: center ;
 }
 
 
@@ -309,6 +325,7 @@ select {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
+  /* color: #565e64; */
 }
 
 .d-grid {
@@ -358,14 +375,14 @@ select {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  color: white;
+  background-color: #76b5c5;
+  border-color: white;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+  background-color: #565e64;
+  border-color: #fff;
 }
 
 .btn-lg, .btn-group-lg > .btn {
@@ -504,7 +521,7 @@ select {
 }
 
 .bg-primary {
-  background-color: rgba(13, 110, 253, 1) !important;
+  background-color: #fff;
 }
 
 .rounded-3 {
@@ -549,13 +566,13 @@ select {
 }
 
 .btn-outline-light {
-  color: #f8f9fa;
-  border-color: #f8f9fa;
+  color: #565e64;
+  border-color: #565e64;
 }
 .btn-outline-light:hover {
-  color: #000;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
+  color: #fff;
+  background-color: #76b5c5;
+  border-color: #76b5c5;
 }
 
 /* Footer

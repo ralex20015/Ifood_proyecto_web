@@ -9,7 +9,7 @@
 body{
     height: 100vh;
     width: 100%;
-    background-color: azure;
+    /* background-color: azure; */
 }
 /* NAV */
 
@@ -35,7 +35,7 @@ body{
   }
   
   .bg-dark {
-    background-color: rgba(33,37,41,1) !important;
+    background-color: #76b5c5 !important;
   }
   
   .sticky-top {
@@ -141,6 +141,7 @@ body{
   align-items: center;
   height: 80%;
 }
+
 .container3{
   background-color: white;
   margin: 1.2rem;
@@ -172,6 +173,8 @@ a.adminBoard{
     border-radius: 10px;
     box-shadow: 3px 3px 3px #6b6969;
     z-index: 1;
+    border: 2px solid #565e64;
+    text-align: center;
 }
 .center-register{
   position: relative;
@@ -184,7 +187,6 @@ a.adminBoard{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  height: 58%;
   align-items: center;
   font-size: 14px;
 }
@@ -251,11 +253,11 @@ img.user-image{
 
 .container2 p.element input:focus{
     outline: none;
-    border-bottom: 2px solid rgb(50, 50, 240);
+    border-bottom: 2px solid #76b5c5;
 }
 
 .container2 button{
-    background-color: rgb(50, 50, 240);
+    background-color: #76b5c5;
     padding: 10px;
     border-radius: 5px;
     color: white;
@@ -266,13 +268,14 @@ img.user-image{
 }
 
 .container2 button:hover{
-    color: rgb(50, 50, 240);
+    color: #76b5c5;
     background-color: white;
-    border: 1px solid rgb(50, 50, 240);
+    border: 1px solid #76b5c5;
+    ;
 }
 
 .container2 a.already-registered{
-    color:  rgb(50, 50, 240);
+    color:  #565e64;
     font-size: 14px;
     cursor: pointer;
     text-decoration: none;
@@ -305,4 +308,8 @@ footer.align-bottom{
 
   .fs-4 {
     font-size: calc(1.275rem + 0.3vw) !important;
+  }
+
+  .my-2 {
+    margin-bottom: 0.5rem !important;
   }

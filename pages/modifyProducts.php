@@ -41,24 +41,37 @@
     </header>
     <h2 class="text-center py-3">Registro de productos</h2>
     <main class="sl-cont">
-        <form class="container2" action="../php/imageRegister.php" method="POST">
+        <?php 
+            include "../php/dbConection.php";
+            $id = $_GET['id'];
+            $query = mysqli_query($conn,"select * from `recipes` where id_recipe='$id'");
+
+            $result = mysqli_fetch_assoc($query);
+            $name = $result['name'];
+            $description = $result['description'];
+            $cost = $result['cost'];
+            $id_chef = $result['id_chef'];
+            $image = $result['image'];
+        ?>
+        <form class="container2" action="../php/updateRow.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $id;?>">
             <p class="element"> 
                 <label for="name">Nombre</label>
-                <input type="text" name="name">
+                <input type="text" name="name" value="<?php echo $name;?>">
                 
             </p>
             <p class="element">
                 <label for="description">Descripción</label>
-                <input type="text" name="description">
+                <input type="text" name="description" value="<?php echo $description;?>">
             </p>
             <p class="element">
                 <label for="cost">Costo</label>
-                <input type="text" name="cost">
+                <input type="text" name="cost" value="<?php echo $cost;?>">
             </p>
 
             <p class="element">
                 <label for="id_chef">Id del chef</label>
-                <input type="text" name="id_chef">
+                <input type="text" name="id_chef" value="<?php echo $id_chef;?>">
             </p>
     
             <!-- <div class="radio-container">
@@ -73,9 +86,9 @@
             </div> -->
             <p class="element">
                 <label for="image">Link de la imagen</label>
-                <input type="text" name="image">
+                <input type="text" name="image" value="<?php echo $image;?>">
             </p>
-            <button type="submit">Registrar</button>
+            <button type="submit">Modificar</button>
         </form>
     </main>
 

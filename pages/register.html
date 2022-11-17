@@ -22,28 +22,29 @@
             </div>
         </nav>
     </header>
-    <main>
-        <form class="container2 center-register" action="../php/register.php" method="post">
+    <main class="bg-image muted">
+    </main>
+    <section>
+        <form class="container2 login" action="../php/register.php" method="post">
             <h2 class="title">Registro</h2>
             <p class="element">
-                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="text" name="nombre" required placeholder="Nombre">
             </p>
             <p class="element">
-                <input type="email" name="email" placeholder="Correo">
+                <input type="email" name="email" required placeholder="Correo">
             </p>
             <p class="element">
-                <input type="password" name="pass" placeholder="Contraseña">
+                <input type="password" name="pass" required placeholder="Contraseña">
             </p>
             <p class="element">
-                <input type="password" name="rep_pass" placeholder="Repetir Contraseña">
+                <input type="password" name="rep_pass" required placeholder="Repetir Contraseña">
             </p>
             <button type="submit">Registrarse</button>
             <a href="login.php" class="already-registered">¿Ya tienes cuenta? Inicia sesión</a>
         </form>
-    </main>
-    <footer class="bg-dark py-3 align-bottom">
+    </section>
+    <footer class="bg-dark py-3">
         <p class="text-center text-muted py-3 m-0 fs-4">&copy; 2022 IFood</p>
     </footer>
-  
 </body>
 </html>

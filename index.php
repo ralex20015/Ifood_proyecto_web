@@ -45,7 +45,7 @@
             <div class="row flex-lg-row-reverse align-items-center g-5">
 
                 <div class="col-lg-7">
-                    <img src="./Images/Pizza.jpg" class="d-block mx-lg-auto img-fluid" width=700 alt="Pizza">
+                    <img src="./Images/pizza-png.png" class="d-block mx-lg-auto img-fluid" width=700 alt="Pizza">
                 </div>
 
                 <div class="col-lg-5">
@@ -53,7 +53,7 @@
                     <p class="lead">¿Cansado de tener que esperar por tu comida? ¡Registrate ya y evita la larga espera!
                     </p>
                     <div class="justify-content-md-start">
-            <a href="./pages/register.html"><button type="button" class="btn btn-primary btn-lg px-5 me-md-2">Registrarse</button></a>
+                        <a href="./pages/register.html"><button type="button" class="btn btn-primary btn-lg px-5 me-md-2">Registrarse</button></a>
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@
 
         <!-- Sign Up -->
         <div class="py-5">
-            <div class="p-5 my-5 bg-primary text-white rounded-3" id="sign-up">
+            <div class="p-5 my-5 bg-primary text-gray rounded-3" id="sign-up">
                 <div class="row row-cols-auto">
                     <div class="col-md-1"></div>
                     <div class="col-md-7">

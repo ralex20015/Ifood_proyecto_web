@@ -31,11 +31,10 @@
         <div class="container2">
             <h2 class="title">Platillos</h2>
             <p class="search-bar">
-                <input type="text" name="searchBar" placeholder="Buscar algo" id="searchBar">
+                <input type="text" name="searchBar" placeholder="Buscar algo" id="searchBar" onkeydown="searchBasedOnKeysPressed(event)">
                 <button name="ok" onclick="showValuesWithTheSearch()">Search</button>
             </p>
         </div>
-
         <table>
             <thead>
                 <tr>
@@ -56,5 +55,8 @@
             </tbody>
         </table>
     </main>
+    <footer class="bg-dark py-3">
+        <p class="text-center text-muted py-3 m-0 fs-4">&copy; 2022 IFood</p>
+    </footer>
 </body>
 </html>
