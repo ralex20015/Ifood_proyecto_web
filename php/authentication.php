@@ -7,8 +7,7 @@
     if ($email == "admin@admin.com" && $pass == "S1a2n3d4r5a0") {
         session_start();
         $_SESSION['id']= -1;
-        header("location: ../pages/formProducts.php");
-        echo "No hago nada";
+        header("location: ../pages/adminPage.php");
     }else if (mysqli_num_rows($consulta)<1) {  
         $_SESSION['msg']="Login Failed, User not found!";
         header("location: ../pages/login.php");

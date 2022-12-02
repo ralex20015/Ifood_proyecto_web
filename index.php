@@ -2,7 +2,7 @@
     session_start();
     if (isset($_SESSION['id'])){
         if ($_SESSION['id'] == -1) {
-            header("location: ./pages/formProducts.php");
+            header("location: ./pages/adminPage.php");
         }else{
             header("location: ./pages/products.php");
         }
@@ -32,9 +32,9 @@
                     src="./Images/pizza-icon.png"> </a>
             <ul class="nav justify-content-end">
                 <li><a href="#" class="nav-link link-secondary">Inicio</a></li>
-                <li><a class="nav-link link-secondary" href="pages/register.html">Registrarse</a></li>
+                <li><a class="nav-link link-secondary" href="pages/registerPage.php">Registrarse</a></li>
                 <li><a class="nav-link link-secondary" href="pages/login.php">Login</a></li>
-                <li><a class="nav-link link-secondary" href="pages/about.html">Acerca de</a></li>
+                <li><a class="nav-link link-secondary" href="pages/about.php">Acerca de</a></li>
             </ul>
         </div>
     </nav>
@@ -53,7 +53,7 @@
                     <p class="lead">¿Cansado de tener que esperar por tu comida? ¡Registrate ya y evita la larga espera!
                     </p>
                     <div class="justify-content-md-start">
-                        <a href="./pages/register.html"><button type="button" class="btn btn-primary btn-lg px-5 me-md-2">Registrarse</button></a>
+                        <a href="./pages/registerPage.php"><button type="button" class="btn btn-primary btn-lg px-5 me-md-2">Registrarse</button></a>
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@
                         <p class="fs-4">¡Registrate para comenzar a disfrutar nuestros platillos!</p>
                     </div>
                     <div class="col-md-4 align-self-center d-flex justify-content-center">
-                        <a href="./pages/register.html"><button class="btn btn-outline-light btn-lg px-5" type="button">Sign Up</button></a>
+                        <a href="./pages/registerPage.php"><button class="btn btn-outline-light btn-lg px-5" type="button">Sign Up</button></a>
                     </div>
                 </div>
             </div>

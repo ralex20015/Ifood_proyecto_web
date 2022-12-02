@@ -144,21 +144,24 @@ body{
 
 .container3{
   background-color: white;
+  text-decoration: none;
   margin: 1.2rem;
   padding: 1.2rem;
   border-radius: 10px;
   box-shadow: 3px 3px 3px #6b6969;
   z-index: 1;
   cursor: pointer; 
+  width: 100%;
+  border: 2px solid #6b6969;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: #000;
 }
 
 .container3 img {
-  margin-left: auto;
-  margin-right: auto;
   width: 70%;
+  height: 40vh;
 }
 a.adminBoard{
   text-decoration: none;
@@ -204,15 +207,26 @@ img.user-image{
   .container2 , .container2.login{
     width: 60%;
   }
+
+  .container3 img{
+    width: 50%;
+    height: 15vh;
+  }
 }
 @media(max-width: 500px){
   .sl-cont{
     flex-direction: column;
   }
   .container3 {
-    width: 90%;
+    width: 80%;
     flex: 1 0 auto;
   }
+
+  .container3 img{
+    width: 50%;
+    height: 20vh;
+  }
+
 
   footer.align-bottom{
     transform: translateY(30%);
@@ -227,12 +241,18 @@ img.user-image{
   }
 }
 
+@media(min-width:950px){
+  .container3 img {
+    width: 70%;
+    height: 40vh;
+  }
+
+}
 @media (min-width: 1250px){
   .container2, .container2.login{
       width: 30%;
   }
 }
-
 
 .container2 h2.title{
     margin-bottom: 1rem;

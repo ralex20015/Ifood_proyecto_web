@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if (isset($_SESSION['id'])){
+        if ($_SESSION['id'] == -1) {
+            header("location: ./adminPage.php");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +27,19 @@
                     src="../Images/pizza-icon.png"> </a>
             <ul class="nav justify-content-end">
                 <li><a href="../index.php" class="nav-link link-secondary">Inicio</a></li>
-                <li><a class="nav-link link-secondary" href="../pages/register.html">Registarse</a></li>
-                <li><a class="nav-link link-secondary" href="../pages/login.php">Login</a></li>
+                <?php 
+                    if (!isset($_SESSION['id'])){
+                        echo '<li><a class="nav-link link-secondary" href="../pages/registerPage.php">Registarse</a></li>
+                            <li><a class="nav-link link-secondary" href="../pages/login.php">Login</a></li>';
+                    }else{
+                        echo '<li><a class="nav-link link-secondary" href="../php/logOut.php">LogOut</a></li>';
+                        echo '<li>
+                                <a class="nav-link link-secondary" href="#">
+                                    <div class="shopping-car"></div>
+                                </a>
+                            </li>';
+                    }
+                ?>
             </ul>
         </div>
     </nav>

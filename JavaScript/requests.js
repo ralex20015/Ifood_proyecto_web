@@ -1,4 +1,4 @@
-function showValuesWithTheSearch(params) {
+function showValuesWithTheSearch(file) {
     var searchBarText = document.getElementById("searchBar").value;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -7,13 +7,13 @@ function showValuesWithTheSearch(params) {
         }
     }
 
-    xhttp.open("GET", "../php/showDataFromBD.php?search=" + searchBarText, true)//Tiene 3 parametros: method (GET or POST), url (server file location), async: true(asynchronous)
-    xhttp.send(); //Envia la peticion al servidor
+    xhttp.open("GET", file+"?search=" + searchBarText, true)//Tiene 3 parametros: method (GET or POST), url (server file location), async: true(asynchronous)
+    xhttp.send(); 
 }
 
 let word= "";
 
-function searchBasedOnKeysPressed(event) {
+function searchBasedOnKeysPressed(event, file) {
     checkKeyPressed(event);
 
     var xhttp = new XMLHttpRequest();
@@ -23,7 +23,7 @@ function searchBasedOnKeysPressed(event) {
         }
     }
 
-    xhttp.open("GET", "../php/showDataFromBD.php?keyPressed=" + word, true);
+    xhttp.open("GET", file+"?keyPressed=" + word, true);
     xhttp.send(); 
 }
 

@@ -28,10 +28,10 @@
     <header>
         <nav class="navbar bg-dark sticky-top">
             <div class="container">
-                <a class="nav-link link-secondary p-0" href="./adminPage.html">IFood<img width="15" height="15"
+                <a class="nav-link link-secondary p-0" href="./adminPage.php">IFood<img width="15" height="15"
                         src="../Images/pizza-icon.png"> </a>
                 <ul class="nav justify-content-end">
-                    <li><a class="nav-link link-secondary" href="./adminPage.html">Inicio</a></li>
+                    <li><a class="nav-link link-secondary" href="./adminPage.php">Inicio</a></li>
                     <li><a class="nav-link link-secondary" href="../pages/recipes.php">Ver</a></li>
                     <li><a class="nav-link link-secondary" href="../pages/formProducts.php">Añadir</a></li>
                     <li><a class="nav-link link-secondary" href="../php/logOut.php">LogOut</a></li>

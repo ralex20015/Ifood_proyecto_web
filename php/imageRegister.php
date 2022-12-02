@@ -12,6 +12,6 @@
 
      mysqli_close($conn);
 
-     header("location: ../pages/recipes.php");
+     header("location: ../pages/formProducts.php");
 
 ?>

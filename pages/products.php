@@ -6,7 +6,7 @@
     }else {
         if (isset($_SESSION['id'])){
             if ($_SESSION['id'] == -1) {
-                header("location:formProducts.php");
+                header("location:adminPage.php");
             }
         }
     }
@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../Images/pizza-icon.png">
     <link rel="stylesheet" href="../CSS/styles.css">
+    <script src="../JavaScript/someName.js"></script>
     <title>Platillos</title>
 </head>
 <body>
@@ -29,9 +30,9 @@
                         src="../Images/pizza-icon.png"> </a>
                 <ul class="nav justify-content-end">
                     <li><a class="nav-link link-secondary" href="../index.php">Inicio</a></li>
-                    <li><a class="nav-link link-secondary" href="../pages/about.html">Acerca de</a></li>
+                    <li><a class="nav-link link-secondary" href="../pages/about.php">Acerca de</a></li>
                     <li><a class="nav-link link-secondary" href="../php/logOut.php">LogOut</a></li>
-
+                    <li><a class="nav-link link-secondary" href="#shopping-car"><div class="shopping-car" onclick="showModal()"></div></a></li>
                 </ul>
             </div>
         </nav>
@@ -40,126 +41,41 @@
     <main class="container">
         <br id="photos">
         <div class="row text-center pt-3 pb-5 mb-3">
-
-            <h2 class="pb-2 border-bottom d-flex justify-content-center">Nuestros platillos</h2>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/carpaccio.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Carpaccio de salmón</p>
-                <p class="recipe-cost">$250</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/lasagna.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Lasagna</p>
-                <p class="recipe-cost">$180</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/risotto.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Risotto con champiñones</p>
-                <p class="recipe-cost">$130</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/spaghetti.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Spaghetti</p>
-                <p class="recipe-cost">$120</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/ossobuco.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Ossobuco con verduras</p>
-                <p class="recipe-cost">$185</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="https://tipsparatuviaje.com/wp-content/uploads/2020/03/ensalada-capresse-1024x683.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Ensalda Capprese</p>
-                <p class="recipe-cost">$140</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="https://tipsparatuviaje.com/wp-content/uploads/2020/03/grissinis-comida-1024x683.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Grissinis</p>
-                <p class="recipe-cost">$100</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="https://tipsparatuviaje.com/wp-content/uploads/2020/03/faina-con-carne-y-berenjena-1024x683.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Faina con carne</p>
-                <p class="recipe-cost">$205</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/ragu-ternera.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Ragú de ternera</p>
-                <p class="recipe-cost">$230</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
             
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/caponata.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Caponata</p>
-                <p class="recipe-cost">$185</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
+            <h2 class="pb-2 border-bottom d-flex justify-content-center">Nuestros platillos</h2>
+            <div class="modal-container" id="shopping-car">
+                <div class="modal">
+                    <header class="modal-header">
+                        <h2 class="modal-title">Tus platillos</h2>
+                        <a href="#" class="modal-close"></a>
+                    </header>
+                    <div class="modal-content">
+                    </div>
+                    <div class="modal-footer">
+                        <div class="new-Product">
+                            <p class="totalText">Total</p>
+                            <p id="total"></p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
+            <?php
+    include "../php/dbConection.php";
 
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/risotto-alla-milanese.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Risotto alla milanese</p>
-                <p class="recipe-cost">$150</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/espagueti-carbonara.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Spaghetti a la carbonara</p>
-                <p class="recipe-cost">$150</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="https://tipsparatuviaje.com/wp-content/uploads/2020/03/albondigas-comida-1024x683.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Albóndigas</p>
-                <p class="recipe-cost">$165</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/ragu-verduras-guisado.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Ragú de verduras guisadas</p>
-                <p class="recipe-cost">$120</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/arancini.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Arancini de arroz</p>
-                <p class="recipe-cost">$110</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/baguette-relleno-ragu.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Baghette relleno de ragú</p>
-                <p class="recipe-cost">$135</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-            <div class="pt-5 px-4 col-lg-3">
-                <img src="../Images/ragu-zanahora-papa-coliflor.jpg" class="rounded-3 img-fluid" alt="...">
-                <p class="pt-2 btn-lg">Ragú de zanahoria</p>
-                <p class="recipe-cost">$150</p>
-                <button class="btn btn-primary btn-lg px-5 me-md-2">Añadir al carro</button>
-            </div>
-
-
+    $query = mysqli_query($conn,"select image,name,cost,id_recipe from `recipes`");
+    if (mysqli_num_rows($query) > 0) {
+        while ($row = mysqli_fetch_assoc($query)) {
+            echo '<div class="pt-5 px-4 col-lg-3">
+                    <img src="'.$row["image"].'" class="rounded-3 img-fluid" alt="...">
+                    <p class="pt-2 btn-lg" id="recipeName'.$row["id_recipe"].'">'.$row["name"].'</p>
+                    <p class="recipe-cost" id="recipeCost'.$row["id_recipe"].'">$'.$row["cost"].'</p>
+                    <button class="btn btn-primary btn-lg px-5 me-md-2" id="'.$row["id_recipe"].'" onClick="addToCar(event)">Añadir al carro</button>
+                </div>';
+        } 
+    }
+    mysqli_close($conn); 
+?>
         </div>
 
     </main>

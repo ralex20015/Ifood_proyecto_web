@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if (isset($_SESSION['id'])){
+        if ($_SESSION['id'] == -1) {
+            header("location: ./pages/adminPage.php");
+        }else{
+            header("location: ./pages/products.php");
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +27,7 @@
                 <ul class="nav justify-content-end">
                     <li><a class="nav-link link-secondary" href="../index.php">Inicio</a></li>
                     <li><a class="nav-link link-secondary" href="../pages/login.php">Login</a></li>
-                    <li><a class="nav-link link-secondary" href="../pages/about.html">Acerca de</a></li>
+                    <li><a class="nav-link link-secondary" href="../pages/about.php">Acerca de</a></li>
                 </ul>
             </div>
         </nav>

@@ -3,7 +3,7 @@
 
     if (isset($_SESSION['id'])){
         if ($_SESSION['id'] == -1) {
-            header("location:formProducts.php");
+            header("location:adminPage.php");
         }else{
             header("location:products.php");
         }
@@ -27,8 +27,8 @@
                         src="../Images/pizza-icon.png"> </a>
                 <ul class="nav justify-content-end">
                     <li><a class="nav-link link-secondary" href="../index.php">Inicio</a></li>
-                    <li><a class="nav-link link-secondary" href="../pages/register.html">Registrarse</a></li>
-                    <li><a class="nav-link link-secondary" href="../pages/about.html">Acerca de</a></li>
+                    <li><a class="nav-link link-secondary" href="../pages/registerPage.php">Registrarse</a></li>
+                    <li><a class="nav-link link-secondary" href="../pages/about.php">Acerca de</a></li>
                 </ul>
             </div>
         </nav>
@@ -46,7 +46,7 @@
                 <input type="password" name="pass" required placeholder="Contraseña">
             </p>
             <button>Iniciar Sesión</button>
-            <p class="element my-2">¿Aún no tienes cuenta?<a href="../pages/register.html" class="already-registered"> Click aquí para registrarte</a></p>
+            <p class="element my-2">¿Aún no tienes cuenta?<a href="../pages/registerPage.php" class="already-registered"> Click aquí para registrarte</a></p>
         </form>
     </section>
 
