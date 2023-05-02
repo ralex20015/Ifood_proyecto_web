@@ -2,7 +2,7 @@
     $dbServer = "localhost";
     $dbUser = "root";
     $dbPass = "";
-    $dbName = "ifood_project";
+    $dbName = "Ifood_proyecto_web";
 
 
     $conn = mysqli_connect($dbServer,$dbUser,$dbPass,$dbName);
