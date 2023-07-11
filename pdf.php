@@ -28,6 +28,7 @@ if ($resultado === false) {
     echo 'Hubo un error al enviar el archivo PDF por WebDAV: ' . curl_error($curl);
 } else {
     echo 'El archivo PDF se ha enviado correctamente por WebDAV.';
+    header('Location: /reports.php');
 }
 ob_end_flush(); 
 ?>
