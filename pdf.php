@@ -23,5 +23,11 @@ curl_setopt($curl, CURLOPT_POSTFIELDS, $pdf->Output($archivo_pdf, 'S'));
 
 // Ejecutar la solicitud
 $resultado = curl_exec($curl);
+
+if ($resultado === false) {
+    echo 'Hubo un error al enviar el archivo PDF por WebDAV: ' . curl_error($curl);
+} else {
+    echo 'El archivo PDF se ha enviado correctamente por WebDAV.';
+}
 ob_end_flush(); 
 ?>
