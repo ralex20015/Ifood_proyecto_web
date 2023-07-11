@@ -22,7 +22,7 @@
     <script src="../JavaScript/someName.js"></script>
     <title>Platillos</title>
 </head>
-<body>
+<body id='content'>
     <header>
         <nav class="navbar bg-dark sticky-top">
             <div class="container">
@@ -56,6 +56,9 @@
                             <p class="totalText">Total</p>
                             <p id="total"></p>
                         </div>
+                        <form action="../pdf.php" method='POST'>
+                            <input type="submit" value='Generar PDF' class='btn btn-primary'>
+                        </form>
                     </div>
                 </div>
                 

@@ -44,7 +44,7 @@ function addToCar(e) {
     let costElement = document.createElement("p");
     let costText = document.createTextNode("$"+cost);
     let btnRemove = document.createElement("button");
-    let btnValidatePurchase = document.createElement("button");
+    // let btnValidatePurchase = document.createElement("button");
 
     btnRemove.textContent = "Eliminar";
     btnRemove.addEventListener("click",function() {
@@ -53,11 +53,20 @@ function addToCar(e) {
     btnRemove.classList.add("btn");
     btnRemove.classList.add("btn-primary");
 
-    btnValidatePurchase.textContent = "Validar compra";
-    btnValidatePurchase.addEventListener("click", getTotal);
-    btnValidatePurchase.setAttribute("id","validatePurchase");
-    btnValidatePurchase.classList.add("btn");
-    btnValidatePurchase.classList.add("btn-primary");
+    // btnValidatePurchase.textContent = "Validar compra";
+    // btnValidatePurchase.setAttribute("id","validatePurchase");
+    // btnValidatePurchase.addEventListener("click", function generatePDF() {
+    //     let xhttp = new XMLHttpRequest();
+    //     xhttp.onload = function () {
+    //         //document.getElementById("validatePurchase").innerHTML = this.responseText;
+    //        // window.history.replaceState(null, document.title, "./pdf.php")
+    //     }
+    //     xhttp.open("GET", "../pdf.php",);
+    //     xhttp.send(); 
+    // });
+
+    // btnValidatePurchase.classList.add("btn");
+    // btnValidatePurchase.classList.add("btn-primary");
 
     element.appendChild(elementText);
     costElement.appendChild(costText);
@@ -75,7 +84,7 @@ function addToCar(e) {
     let totalParagraph = document.getElementById("total");
 
     if (container.hasChildNodes && !buttonPurchasedCreated) {
-        document.querySelector(".modal-footer").appendChild(btnValidatePurchase);
+        //document.querySelector(".modal-footer").appendChild(btnValidatePurchase);
         buttonPurchasedCreated = true; 
     }
     totalParagraph.textContent = total;
@@ -96,8 +105,8 @@ function removeFromCar(id){
     total -= parseFloat(getCost(element.textContent));
     console.log(total);
     if (container.childElementCount == 0) {
-        let btn = document.getElementById("validatePurchase");
-        btn.remove();
+        // let btn = document.getElementById("validatePurchase");
+        // btn.remove();
         buttonPurchasedCreated = false;
     }
 
