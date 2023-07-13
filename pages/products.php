@@ -53,11 +53,16 @@
                     </div>
                     <div class="modal-footer">
                         <div class="new-Product">
-                            <p class="totalText">Total</p>
+                            <p id="totalText" class="totalText">Total</p>
                             <p id="total"></p>
                         </div>
                         <form action="../pdf.php" method='POST'>
-                            <input type="submit" value='Generar PDF' class='btn btn-primary'>
+                            <?php
+                            echo '<input style="display:none;" name="currentUser" type="text" value="'.$_SESSION['id'].'" id="idCurrentUser">'
+                            ?>
+                            <input style="display:none;" name="amountOfRecipes" type="text" value="" id="amountOfRecipesPurchased">
+                            <input style="display:none;" name="totalOfCar" type="text" value="" id="totalOfCar">
+                            <input style="display:none;" type="submit" value='Generar PDF' class='btn btn-primary' id="submit-pdf">
                         </form>
                     </div>
                 </div>

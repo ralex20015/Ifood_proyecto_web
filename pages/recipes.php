@@ -7,9 +7,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/tables.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <script rel="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <link rel="icon" href="../Images/pizza-icon.png">
-    <script type="text/javascript" src="../JavaScript/requests.js"></script>
+    <!--<script type="text/javascript" src="../JavaScript/requests.js"></script>-->
     <title>Platillos</title>
 </head>
 <body>
@@ -30,13 +32,9 @@
     <main>
         <div class="container2">
             <h2 class="title">Platillos</h2>
-            <p class="search-bar">
-                <input type="text" name="searchBar" placeholder="Buscar algo" id="searchBar" 
-                    onkeydown="searchBasedOnKeysPressed(event,'../php/showDataFromBD.php')">
-                <button name="ok" onclick="showValuesWithTheSearch('../php/showDataFromBD.php')">Search</button>
-            </p>
         </div>
-        <table>
+        <div id="table-container">
+        <table id="tablaRecetas" >
             <thead>
                 <tr>
                     <th scope="col">Id</th>
@@ -45,17 +43,16 @@
                     <th scope="col">Descripcion</th>
                     <th scope="col">Imagen</th>
                     <th scope="col">Id_chef</th>
-                    <th scope="col">Modificar</th>
-                    <th scope="col">Borrar</th>
-                </tr>
+                </tr>                
             </thead>
-            <tbody id="example">
-                <?php
-                    include "../php/showDataFromBD.php"; 
-                ?>
+            <tbody>
+                <!-- llenado por javascript -->
             </tbody>
         </table>
-    </main>
+        </div> 
+    <script rel="text/javascript" src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../JavaScript/recipes.js"></script>
+</main>
     <footer class="bg-dark py-3">
         <p class="text-center text-muted py-3 m-0 fs-4">&copy; 2022 IFood</p>
     </footer>

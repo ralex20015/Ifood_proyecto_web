@@ -1,6 +1,8 @@
 let buttonPurchasedCreated = false;
 let idA = 0;
+let idPreviousId = -1;
 let total = 0;
+let numberOfItems = 0;
 function checkOptionSelected() {
 
     var optionSubir = document.getElementById("uploadImage");
@@ -27,7 +29,7 @@ function showModal() {
     let container = document.querySelector(".modal-container");
     container.style.display = "flex";
 }
-
+//Nombre, cantidad, precio unitario, total
 function addToCar(e) {
     let idElement = e.target.id;
     let nameParagraph = document.getElementById("recipeName"+idElement);
@@ -36,37 +38,38 @@ function addToCar(e) {
     let value = costParagraph.textContent;
 
     let cost = getCost(value);
-
+    numberOfItems++;
     let container = document.querySelector(".modal-content");
+    let totalText = document.querySelector("#totalText");
     let div = document.createElement("div");
     let element = document.createElement("p");
     let elementText = document.createTextNode(name);
     let costElement = document.createElement("p");
     let costText = document.createTextNode("$"+cost);
     let btnRemove = document.createElement("button");
-    // let btnValidatePurchase = document.createElement("button");
+    let btnValidatePurchase = document.createElement("button");
 
     btnRemove.textContent = "Eliminar";
     btnRemove.addEventListener("click",function() {
         removeFromCar(idElement);
     });
+
     btnRemove.classList.add("btn");
     btnRemove.classList.add("btn-primary");
+    //This button hide when there isn't items on the car and is for register on the database
+    btnValidatePurchase.textContent = "Validar compra";
+    btnValidatePurchase.setAttribute("id","validatePurchase");
+    btnValidatePurchase.addEventListener("click", function generatePDF() {
+        let amountOfRecipesPurchased = document.getElementById("amountOfRecipesPurchased");
+        amountOfRecipesPurchased.value = numberOfItems;
+        let totalOfCar = document.getElementById("totalOfCar");
+        totalOfCar.value = total;
+        let btnSubmint = document.getElementById("submit-pdf");
+        btnSubmint.click();
+    });
 
-    // btnValidatePurchase.textContent = "Validar compra";
-    // btnValidatePurchase.setAttribute("id","validatePurchase");
-    // btnValidatePurchase.addEventListener("click", function generatePDF() {
-    //     let xhttp = new XMLHttpRequest();
-    //     xhttp.onload = function () {
-    //         //document.getElementById("validatePurchase").innerHTML = this.responseText;
-    //        // window.history.replaceState(null, document.title, "./pdf.php")
-    //     }
-    //     xhttp.open("GET", "../pdf.php",);
-    //     xhttp.send(); 
-    // });
-
-    // btnValidatePurchase.classList.add("btn");
-    // btnValidatePurchase.classList.add("btn-primary");
+    btnValidatePurchase.classList.add("btn");
+    btnValidatePurchase.classList.add("btn-primary");
 
     element.appendChild(elementText);
     costElement.appendChild(costText);
@@ -84,7 +87,7 @@ function addToCar(e) {
     let totalParagraph = document.getElementById("total");
 
     if (container.hasChildNodes && !buttonPurchasedCreated) {
-        //document.querySelector(".modal-footer").appendChild(btnValidatePurchase);
+        totalText.parentNode.insertBefore(btnValidatePurchase, totalText.nextSibling);
         buttonPurchasedCreated = true; 
     }
     totalParagraph.textContent = total;
@@ -102,11 +105,12 @@ function removeFromCar(id){
     let totalParagraph = document.getElementById("total");
     element.remove();
     idA--;
+    numberOfItems--;
     total -= parseFloat(getCost(element.textContent));
     console.log(total);
     if (container.childElementCount == 0) {
-        // let btn = document.getElementById("validatePurchase");
-        // btn.remove();
+        let btn = document.getElementById("validatePurchase");
+        btn.remove();
         buttonPurchasedCreated = false;
     }
 

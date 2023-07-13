@@ -90,6 +90,21 @@ svg {
   vertical-align: middle;
 }
 
+#table-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#tablaRecetas_wrapper{
+  width: 60%;
+}
+
+td img{
+  width: 5em;
+  height: 5em;
+}
+
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
