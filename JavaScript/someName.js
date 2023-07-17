@@ -3,6 +3,7 @@ let idA = 0;
 let idPreviousId = -1;
 let total = 0;
 let numberOfItems = 0;
+let recipes = [];
 function checkOptionSelected() {
 
     var optionSubir = document.getElementById("uploadImage");
@@ -27,10 +28,21 @@ function getEventTarget(e) {
 
 function showModal() {
     let container = document.querySelector(".modal-container");
+    let carContainer = document.querySelector(".modal-content");
+
+    // for (let index = 0; index < recipes.length; index++) {
+    //     let recipe = recipes[index];
+    //     carContainer.appendChild(createItemOnTheCar(recipe.name, recipe.cost, recipe.quantity, recipe.total, index));
+    // }
     container.style.display = "flex";
 }
+
 //Nombre, cantidad, precio unitario, total
+//TODO: Add like headers to distiguish what field is what
+//TODO: Update total values according to the array of objects
 function addToCar(e) {
+    hideToast();
+    showToast();
     let idElement = e.target.id;
     let nameParagraph = document.getElementById("recipeName"+idElement);
     let costParagraph = document.getElementById("recipeCost"+idElement);
@@ -91,7 +103,6 @@ function addToCar(e) {
         buttonPurchasedCreated = true; 
     }
     totalParagraph.textContent = total;
-
 }
 
 function getCost(String) {
@@ -99,6 +110,7 @@ function getCost(String) {
     return cost = values[1]; 
 }
 
+//TODO: change the removeMethod when the quantity is more than one
 function removeFromCar(id){
     let element = document.getElementById("carElement"+id);
     let container = document.querySelector(".modal-content");
@@ -115,5 +127,88 @@ function removeFromCar(id){
     }
 
     totalParagraph.textContent = total;
+}
+function itemExistOnTheCar(name){
+    if (recipes.length===0) {
+        return false;
+    }else{
+        for(let i=0; i < recipes.length; i++){
+            if(recipes[i].name === name){
+                return true
+            }
+        }
+        return false;
+    }
+}
+
+function getIndexOfTheItemThatExists(name){
+    for (let index = 0; index < recipes.length; index++) {
+        if (recipes[index].name === name) {
+            return index;
+        }
+    }
+    return -1;
+}
+
+function addRecipeToTheListOfObjects(name, cost) {
+    if (itemExistOnTheCar(name) === false) {
+        let recipe = {
+            name: name,
+            cost: parseInt(cost),
+            quantity: 1,
+            total: parseInt(cost)
+        }
+        recipes.push(recipe);
+        console.log(recipes);
+    }else{
+        let indexOfTheItemOnTheList = getIndexOfTheItemThatExists(name);
+
+        recipes[indexOfTheItemOnTheList].quantity++;
+        let currentQuantity = recipes[indexOfTheItemOnTheList].quantity;
+        let cost = recipes[indexOfTheItemOnTheList].cost;
+        let total = currentQuantity * cost;
+        recipes[indexOfTheItemOnTheList].total = total;
+    }
+}
+
+function createItemOnTheCar(name, cost, quantity, total, id) {
+    let divItem = document.createElement("div");
+    let itemName = createElement("p",name);
+    let itemCost = createElement("p",cost);
+    let itemQuantity = createElement("p",quantity);
+    let totalOfItem = createElement("p",total);
+    let btnRemove;
+    if (cost === total) {
+        btnRemove = createElement("button","Eliminar","btn btn-primary", 
+        function() { removeFromCar(id);});
+    }else{
+        btnRemove = createElement("button","-","btn btn-primary", 
+        function() { removeFromCar(id);});
+    }
+
+    divItem.appendChild(itemName)
+    divItem.appendChild(itemCost);
+    divItem.appendChild(itemQuantity);
+    divItem.appendChild(totalOfItem);
+    divItem.appendChild(btnRemove);
+    divItem.setAttribute("id","carElement"+id);
+
+    divItem.classList.add("new-Product");
+    return divItem;
+}
+
+function createElement(typeOfElement, content, classOfElement = "", listener = () => {}) {
+    const element = document.createElement(typeOfElement);
+    element.textContent = content;
+    element.classList = classOfElement;
+    element.addEventListener('click',listener);
+    return element;
+}
+
+function setButtons(params) {
+    
+}
+function updateItemOnTheCar(id) {
+    
 }
 

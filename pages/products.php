@@ -19,6 +19,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../Images/pizza-icon.png">
     <link rel="stylesheet" href="../CSS/styles.css">
+    <script src="https://kit.fontawesome.com/2664800955.js" crossorigin="anonymous"></script>
+    <script src="../JavaScript/productsToasts.js"></script>
     <script src="../JavaScript/someName.js"></script>
     <title>Platillos</title>
 </head>
@@ -31,6 +33,7 @@
                 <ul class="nav justify-content-end">
                     <li><a class="nav-link link-secondary" href="../index.php">Inicio</a></li>
                     <li><a class="nav-link link-secondary" href="../pages/about.php">Acerca de</a></li>
+                    <li><a class="nav-link link-secondary" href="http://192.168.1.85:81/webdav/">Reportes</a></li>
                     <li><a class="nav-link link-secondary" href="../php/logOut.php">LogOut</a></li>
                     <li><a class="nav-link link-secondary" href="#shopping-car"><div class="shopping-car" onclick="showModal()"></div></a></li>
                 </ul>
@@ -85,7 +88,14 @@
     mysqli_close($conn); 
 ?>
         </div>
-
+        <div class="toastBox">
+            <div class="toastHeader">
+                <button class="close-toast" onclick="hideToast()">X</button>
+            </div>
+            <div class="toastContent">
+                <i class="fa-sharp fa-solid fa-circle-check"></i> Se agrego al carro
+        </div>
+    </div>
     </main>
     <!--  https://tipsparatuviaje.com/comidas-tipicas-en-italia/ -->
     <!--Risotto alla milanese-->

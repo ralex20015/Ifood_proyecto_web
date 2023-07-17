@@ -33,6 +33,7 @@
                             <li><a class="nav-link link-secondary" href="../pages/login.php">Login</a></li>';
                     }else{
                         echo '<li><a class="nav-link link-secondary" href="../php/logOut.php">LogOut</a></li>';
+                        echo '<li><a class="nav-link link-secondary" href="http://192.168.1.85:81/webdav/">Reportes</a></li>';
                         echo '<li>
                                 <a class="nav-link link-secondary" href="#">
                                     <div class="shopping-car"></div>
