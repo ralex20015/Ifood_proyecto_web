@@ -61,6 +61,8 @@ function addToCar(e) {
     let btnRemove = document.createElement("button");
     let btnValidatePurchase = document.createElement("button");
 
+
+    addRecipeToTheListOfObjects(name, cost);
     btnRemove.textContent = "Eliminar";
     btnRemove.addEventListener("click",function() {
         removeFromCar(idElement);
@@ -76,6 +78,9 @@ function addToCar(e) {
         amountOfRecipesPurchased.value = numberOfItems;
         let totalOfCar = document.getElementById("totalOfCar");
         totalOfCar.value = total;
+        let recipesObjects = document.getElementById("recipesObjects");
+        let data = JSON.stringify(recipes);
+        recipesObjects.value = data;
         let btnSubmint = document.getElementById("submit-pdf");
         btnSubmint.click();
     });

@@ -65,6 +65,7 @@
                             ?>
                             <input style="display:none;" name="amountOfRecipes" type="text" value="" id="amountOfRecipesPurchased">
                             <input style="display:none;" name="totalOfCar" type="text" value="" id="totalOfCar">
+                            <input style="display:none;" name="recipesObjects" type="text" value="" id="recipesObjects">
                             <input style="display:none;" type="submit" value='Generar PDF' class='btn btn-primary' id="submit-pdf">
                         </form>
                     </div>
